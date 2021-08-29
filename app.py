@@ -15,7 +15,7 @@ def get_sum():
 @app.route('/data',methods=['POST','GET'])
 def get_data():
    if request.method=='POST':
-      print(type(request.json))
+      print(request.json)
       return {'result':0}
    return {'error':0}
 
