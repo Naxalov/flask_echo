@@ -5,11 +5,12 @@ from flask import request
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def get_sum():
    r = request.args
-   data = int(r['a'])*2
+   a = int(r.get('a',0))
+   b = int(r.get('b',0))
    
-   return str(data)
+   return {'result':a+b} 
 
 if __name__ == '__main__':
     app.run(debug=True)
