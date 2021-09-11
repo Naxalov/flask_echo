@@ -16,7 +16,7 @@ def echo(update, context):
 @app.route('/data',methods=['POST','GET'])
 def get_data():
    if request.method=='POST':
-      dp = Dispatcher(bot)
+      dp = Dispatcher(bot,None,workers=0)
 
       update = telegram.update.de_json(request.json(),bot)
       dp.add_handler(MessageHandler(Filters.text,echo))
