@@ -9,9 +9,6 @@ bot = telegram.Bot('1602686596:AAECWOgNbMCkfTUAxYEtKJFtnej6H6Dp5TA')
 def get_data():
    if request.method=='POST':
       print(request.json)
-      update = request.json['message']['text']
-      chat_id = request.json['message']['from']['id']
-      bot.sendMessage(ch,update)
       return {'result':0}
    return {'error':0}
 
