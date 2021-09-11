@@ -4,7 +4,9 @@ import telegram
 from telegram import KeyboardButton, ReplyKeyboardMarkup
 from telegram.ext import CommandHandler, Dispatcher, Filters, MessageHandler
 
-
+#kerakli functionlarni olamiz
+from get_namoz_time import get_namoz_times
+from get_namoz_time import get_by_city
 
 app = Flask(__name__)
 bot = telegram.Bot('1602686596:AAECWOgNbMCkfTUAxYEtKJFtnej6H6Dp5TA')
