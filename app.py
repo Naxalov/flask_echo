@@ -18,7 +18,7 @@ def get_data():
    if request.method=='POST':
       dp = Dispatcher(bot,None,workers=0)
 
-      update = telegram.update.de_json(request.json(),bot)
+      update = telegram.Update.de_json(request.json(),bot)
       dp.add_handler(MessageHandler(Filters.text,echo))
       dp.process_update(update)
       # print(request.json)
