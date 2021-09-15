@@ -15,7 +15,7 @@ bot = telegram.Bot('1602686596:AAECWOgNbMCkfTUAxYEtKJFtnej6H6Dp5TA')
 
 button1 = KeyboardButton(text = "Shahar yoki davlat nomini inglizchada yuboring")
 button2 = KeyboardButton(text="Location yuboring", request_location = True)
-button3 = KeyboardButton(text="Tarjimon 🇰🇷")
+button3 = KeyboardButton(text="translate")
 
 buttons = ReplyKeyboardMarkup([[button1], [button2], [button3]], resize_keyboard=True)
 
@@ -63,11 +63,10 @@ def get_data():
       update = telegram.Update.de_json(request.json,bot)
 
       dp.add_handler(CommandHandler('start', start))
-      dp.add_handler(CommandHandler('translate', translate))
       dp.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
       dp.add_handler(MessageHandler(Filters.location, callback=location_user))
 
-      dp.add_handler(MessageHandler(Filters.text,echo))
+      dp.add_handler(MessageHandler(Filters.text,translate))
       dp.process_update(update)
       
 
