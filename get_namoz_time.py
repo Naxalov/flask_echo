@@ -1,9 +1,8 @@
-
 import requests
 import datetime
 import json
-# latitude = 37.55372
-# longitude = 127.072203 
+
+
 
 
 def get_namoz_times(longitude, latitude):
